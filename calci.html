@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style type="text/css">
+        body{
+            margin-top: 50px;
+        }
+
+        button
+        {
+            font-family: "Arial";
+            font-size: larger;
+            width:80px;
+            height:40px;
+            background: #424052;
+            color: #fff;
+            margin:20px;
+        }
+        input
+        {
+        	width:400px;
+            height:70px;
+            color:#666999;
+        }
+        form
+        {
+            margin: 0 auto; 
+            width:600px;
+        }
+        #do{
+            width: 400px;
+            margin: 20px auto;
+        }
+    </style>
+    <script type="text/javascript">
+    function editDisplay(e)
+    {
+       document.getElementById("Input").value += e;
+    }
+    function showResult(total)
+    {
+        if(total != undefined && total != Infinity)
+        {
+            document.getElementById("Input").value = total ;
+        }
+        else
+        {
+            alert("Provide Proper Expression...");
+        }
+    }
+    </script>
+</head>
+<body>
+    <form id="form1" style="text-align:center;">
+    <table>
+        <tr>
+            <td>
+                <input type="text" style="font-size: larger; text-align: right; padding: 20px" id="Input" size="16" />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('1')">1</button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('2')">
+                    2
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('3')">
+                    3
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('+')">
+                    +
+                </button>
+                <br />
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('4')">
+                    4
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('5')">
+                    5
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('6')">
+                    6
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('-')">
+                    -
+                </button>
+                <br />
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('7')">
+                    7
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('8')">
+                    8
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('9')">
+                    9
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('*')">
+                    *
+                </button>
+                <br />
+                <button type="button" class="btn btn-primary active" onclick="document.getElementById('Input').value = ''">
+                    C
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('0')">
+                    0
+                </button>
+                <button type="button" class="btn btn-primary active" onclick="showResult(Math.sqrt(eval(document.getElementById('Input').value)));return false">&radic;
+                </button>
+
+                <button type="button" class="btn btn-primary active" onclick="editDisplay('/')">
+                    /
+                </button>
+                <br />
+                <button type="button" id ="do" class="btn btn-primary btn-block" onclick="showResult(eval(document.getElementById('Input').value));return false">
+                    =
+                </button>
+                
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
